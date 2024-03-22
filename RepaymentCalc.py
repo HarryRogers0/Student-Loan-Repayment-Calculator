@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 from datetime import datetime
-import altair as alt
 import plotly.graph_objs as go
 import pandas as pd
 
@@ -111,7 +110,7 @@ if 'salary_changes' not in st.session_state:
 plan_option = st.selectbox("Select Your Student Loan Plan", 
                            ("Plan 1", "Plan 2", "Plan 4", "Plan 5", "Postgraduate Loan"))
 first_loan_year = st.number_input("First Loan Payment Year", min_value=1980, 
-                                  max_value=datetime.now().year, value=2010)
+                                  value=2010)
 loan_amount = st.number_input("Total Loan Balance in thousands (£)", min_value=0, value=50, format = "%d") * 1000  # Input in 'k', convert to full amount
 initial_salary = st.number_input("Current Annual Salary in thousands", min_value=0, value=35, format = "%d")  # Input as 'k'
 
